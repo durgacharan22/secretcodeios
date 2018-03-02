@@ -27,6 +27,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         AppDelegate.mdl.addSymbolToGuess(Symbol: AppDelegate.mdl.Symbols[indexPath.row])
         GuessLBL.text = AppDelegate.mdl.StatusForAGuess()
         GameLBL.text = AppDelegate.mdl.Status
+        if AppDelegate.mdl.Guess.count == 4 {
+            tableView.isUserInteractionEnabled = false
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
 
     @IBAction func resetBTN(_ sender: Any) {
+        tb?.isUserInteractionEnabled = true
         self.tb?.reloadData()
         GuessLBL.text = ""
         GameLBL.text = ""
