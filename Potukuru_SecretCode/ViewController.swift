@@ -37,7 +37,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tb?.reloadData()
         GuessLBL.text = ""
         GameLBL.text = ""
-        
+        AppDelegate.mdl.reset()
     }
     
     

@@ -20,7 +20,7 @@ class CodeWord{
     var Status:String
     
     init(Count:Int){
-        self.Symbols = ["d","c","a","a"]
+        self.Symbols = ["a","b","c","d"]
         self.Attempts = 0
         self.Code = ["d","c","a","a"]
         self.Count = 4
@@ -40,6 +40,7 @@ class CodeWord{
     }
     func SymbolsGuessed() -> Int{
         var res = 0
+//        print(Guess)
         for i in 0 ..< Guess.count {
             if Code[i] == Guess[i] {
                 res += 1
@@ -64,6 +65,7 @@ class CodeWord{
         for _ in 0 ..< 4{
             Code.append(self.Symbols[Int(arc4random_uniform(4))])
         }
+        self.Guess = []
         OnSymbol = 0
     }
     
